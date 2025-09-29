@@ -99,6 +99,40 @@ function playGame(){
 
 }
 
-playGame()
 
-/* */
+function isEven(num) {
+    if (num % 2 == 0) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+/* Sum of tripled items in array: Triple the item, get the sum as 1 value */
+let numbArray = [1,2,3,4,5]
+console.log(numbArray)
+let filteredArray = numbArray.filter(isEven);
+let multipliedArray = filteredArray.map((num) => num * 3)
+let total = multipliedArray.reduce((total, currentItem) => {return total + currentItem}) 
+console.log(total)
+
+// Sort in decreasing order
+// Numbers need to be able to compare with one another and sort accordingly.
+// First loop to iterate through all items, so all items compare with each other at least once
+// Second loop is to reposition after they compare with the item beside them. Length - 1 times.
+let replaced = 0
+let arr = [5,2,1,-10,8];
+for (let i = 0; i < arr.length-1; i++) {
+    for (let j = 0; j < arr.length-1; j++)
+    {
+        if (arr[j] > arr[j+1]) {
+            continue
+        } else {
+            replaced = arr[j]
+            arr[j] = arr[j+1]
+            arr[j+1] = replaced
+        }
+    }
+}
+console.log(arr)
