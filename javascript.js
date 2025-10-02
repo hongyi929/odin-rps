@@ -4,10 +4,10 @@ console.log("Hello World")
 /* Randomly gets a choice */
 function getComputerChoice() {
     let comnum = Math.random()
-    if (comnum <= 1/3) {
+    if (comnum <= 1 / 3) {
         comchoice = 'rock'
     }
-    else if (comnum <= 2/3) {
+    else if (comnum <= 2 / 3) {
         comchoice = 'paper'
     }
     else {
@@ -22,7 +22,7 @@ function getHumanChoice() {
 }
 
 /* Plays the actual game, updates the score variables and prints results */
-function playRound(humanChoice,computerChoice){
+function playRound(humanChoice, computerChoice) {
     let human = ''
     if (humanChoice == "rock") {
         if (computerChoice == 'paper') {
@@ -70,8 +70,8 @@ function playRound(humanChoice,computerChoice){
     return human
 }
 
-/* Calls playRound 5x*/ 
-function playGame(){
+/* Calls playRound 5x*/
+function playGame() {
     let humanScore = 0
     let computerScore = 0
     for (i = 0; i < 5; i++) {
@@ -100,39 +100,64 @@ function playGame(){
 }
 
 
-function isEven(num) {
-    if (num % 2 == 0) {
-        return true
-    }
-    else {
-        return false
-    }
-}
 
-/* Sum of tripled items in array: Triple the item, get the sum as 1 value */
-let numbArray = [1,2,3,4,5]
-console.log(numbArray)
-let filteredArray = numbArray.filter(isEven);
-let multipliedArray = filteredArray.map((num) => num * 3)
-let total = multipliedArray.reduce((total, currentItem) => {return total + currentItem}) 
-console.log(total)
 
-// Sort in decreasing order
-// Numbers need to be able to compare with one another and sort accordingly.
-// First loop to iterate through all items, so all items compare with each other at least once
-// Second loop is to reposition after they compare with the item beside them. Length - 1 times.
-let replaced = 0
-let arr = [5,2,1,-10,8];
-for (let i = 0; i < arr.length-1; i++) {
-    for (let j = 0; j < arr.length-1; j++)
-    {
-        if (arr[j] > arr[j+1]) {
-            continue
-        } else {
-            replaced = arr[j]
-            arr[j] = arr[j+1]
-            arr[j+1] = replaced
-        }
-    }
+/* For game interface 
+<h2>Choose wisely, warrior.</h2>
+            <div>
+                <div class="rock">
+                    <img src="rock.png">
+                </div>
+                <div class="paper">
+                    <img src="paper.png">
+                </div>
+                <div class="scissors">
+                    <img src="scissors.png">
+                </div>
+            </div>
+            <img src="default_frieza.png"></img> */
+
+
+let menuBtn = document.querySelector(".begin");
+let gokuPanel = document.querySelector(".goku");
+let vegetaPanel = document.querySelector(".vegeta");
+let video = document.querySelector(".video")
+let skipButton = document.querySelector(".skip")
+let rpsBody = document.querySelector(".rpsBody")
+let myVideo = video.firstElementChild;
+
+menuBtn.addEventListener("click", () => {
+
+    gokuPanel.style.display = "block";
+    vegetaPanel.style.display = "block";
+
+
+    gokuPanel.style.left = "0vw";
+    vegetaPanel.style.left = "50vw"
+
+    setTimeout(() => {
+        myVideo.play();
+        skipButton.style.display = "block";
+        video.style.display = "block";
+        gokuPanel.style.left = "-50vw";
+        vegetaPanel.style.left = "100vw";
+    }, 2000);
+});
+
+
+skipButton.addEventListener("click", () => {
+    myVideo.src=""
+    rpsSetup();
+})
+
+myVideo.addEventListener("ended", () => {
+    rpsSetup();
+
+})
+
+function rpsSetup() {
+    rpsBody.style.display = "none";
+    skipButton.style.display="none";
+    video.style.display = "none";
+
 }
-console.log(arr)
