@@ -1,6 +1,7 @@
 # Rock Paper Scissors!
 Goku and Vegeta spar to determine who's the best saiyan warrior between the both of them. Will you help Goku defend Earth?
 
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/57d553eb-2d3d-492b-b16c-3658da5f0dcf" />
 
 
 ## Rationale
