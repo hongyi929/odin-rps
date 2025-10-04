@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <video class="sfx" src="videos/sfx.mp4"></video>
+
     <!-- Sliding Panel HTML -->
     <div class="goku">
     </div>
@@ -22,7 +24,7 @@
 
     <!-- Video HTML -->
     <div class="video">
-        <video src="dbsrps.mp4"> </video>
+        <video src="videos/db rps.mp4"> </video>
     </div>
     <button class="skip">SKIP</button>
 
@@ -45,46 +47,84 @@
         </div>
     </main>
 
+    <div class="whiteOverlay"></div>
+
     <!-- Rock Paper Scissors HTML -->
     <div class="rpsBody">
+
+
         <div class="rpsTitle">
             <h1>ROCK PAPER SCISSORS</h1>
         </div>
-        <div class="icons">
-            <div>
-                <div>
-                    <i></i>
-                </div>
-                <div>
-                    <i></i>
-                </div>
-                <div>
-                    <i></i>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <i></i>
-                </div>
-            </div>
-        </div>
-        <div class="results">
 
+        <h2>Pick a choice</h2>
+        <div class="icons iconButton">
+
+            <div class="rock">
+                <img src="rock.png" />
+            </div>
+            <div class="paper">
+                <img src="paper.png" />
+            </div>
+            <div class="scissors">
+                <img src="scissors.png" />
+            </div>
         </div>
+
         <div class="beam">
+
             <div class="kamehameha">
-
+                <img class="blueSplash one" src="elements/blueSplash.png">
+                <img class="blueSplash two" src="elements/blueSplash.png">
+                <div class="beam"></div>
+                <div class="lines"></div>
             </div>
+
             <div class="galickGun">
-
+                <img class="purpleSplash one" src="elements/purpleSplash.png">
+                <img class="purpleSplash two" src="elements/purpleSplash.png">
+                <div class="beam"></div>
+                <div class="lines"></div>
             </div>
+
+
         </div>
         <div class="reaction">
-            <div><img src= /></div>
-            <div><img src= /></div>
+            <div class="gokuReaction">
+                <div>
+                    <p>SON GOKU</p>
+                </div>
+            </div>
+            <div class='icons gokuIcon'>
+
+                <div><img /></div>
+            </div>
+            <div class='icons vegetaIcon'>
+                <div><img /></div>
+            </div>
+            <div class="vegetaReaction">
+                <div>
+                    <p> PRINCE VEGETA</p>
+                </div>
+            </div>
+
+
         </div>
 
     </div>
+    <div class="kaioken">
+
+    </div>
+    <div class="replay">
+        <video src="credits rps.mp4"></video>
+        <div>
+            <h2>You Won!</h2>
+            <p>Check out credits and inspirations in README!</p>
+            <button>Play again?</button>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
