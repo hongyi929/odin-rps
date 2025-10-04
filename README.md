@@ -1,8 +1,7 @@
 # Rock Paper Scissors!
 Goku and Vegeta spar to determine who's the best saiyan warrior between the both of them. Will you help Goku defend Earth?
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/57d553eb-2d3d-492b-b16c-3658da5f0dcf" />
-
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a053419b-7b83-48a1-be09-9bbc24ee723f" />
 
 ## Rationale
 While working on The Odin Project to improve my HTML, CSS and JavaScript skills, I thought it would be fun to try making it DBZ themed, as it's an anime that has helped inspire me throughout difficult times.
