@@ -1,0 +1,577 @@
+@font-face {
+    font-family: "DBZFont";
+    src: URL(./Saiyan-Sans.ttf) format('truetype');
+    font-size: 10;
+}
+
+@font-face {
+    font-family: "hurme-geometric";
+    src: URL('./HurmeGeometricSans1.otf') format("opentype");
+    font-size: 10;
+}
+
+.sfx {
+    display: none;
+}
+
+.video {
+    position: absolute;
+    display: none;
+    height: 100vh;
+    width: auto;
+    z-index: 4;
+}
+
+.video>video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    /* Makes it fill whole screen */
+}
+
+body {
+    margin: 0;
+    background-image: url(./wastelands.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.title {
+    padding: 10px 30px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 15vh;
+    max-height: 15vh;
+}
+
+.title>h1 {
+    font-family: "DBZFont";
+    font-size: 100px;
+    color: #FAEE03;
+    -webkit-text-stroke: 0.05px black;
+    margin: 0px;
+}
+
+#ball {
+    color: #E61E24;
+}
+
+#Z {
+    font-size: 120px;
+    color: #E61E24;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.main>div {
+    height: 85vh;
+    box-sizing: border-box;
+    max-height: 70vh;
+    width: 100%
+}
+
+
+.interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu {
+    border-radius: 10px;
+    border: 5px solid #F02929;
+    background-color: rgba(0, 0, 0, 0.668);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 30vw;
+
+}
+
+.menu>h2 {
+    color: white;
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-size: 35px;
+    -webkit-text-stroke: 1px black;
+}
+
+
+.vegeta {
+    background-color: #3981ce;
+    position: absolute;
+    width: 50vw;
+    left: 100vw;
+    transition-duration: 0.4s;
+    z-index: 5;
+    height: 100vh;
+}
+
+.goku>img {
+    width: 100%;
+    height: auto;
+}
+
+.vegeta>img {
+    width: 120%;
+    height: auto;
+}
+
+.goku {
+    height: 100vh;
+    background-color: orange;
+    position: absolute;
+    width: 50vw;
+    left: -50vw;
+    transition-duration: 0.4s;
+    z-index: 5;
+    background-image: url(./goku_default.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -20vh;
+}
+
+.menu>button {
+    background-color: black;
+    height: 40px;
+    padding: 0px 15px;
+    font-family: hurme-geometric;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    border: 2px solid #F02929;
+    transition-duration: 0.2s;
+}
+
+.menu>p {
+    color: white;
+    font-family: "hurme-geometric";
+    text-align: center;
+}
+
+.menu>button:hover {
+    background-color: #F02929;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.skip {
+    background-color: black;
+    color: white;
+    border: 3px solid #F02929;
+    font-family: hurme-geometric;
+    display: none;
+    position: absolute;
+    z-index: 4;
+    top: 85vh;
+    left: 47vw;
+    height: 40px;
+    padding: 0px 50px;
+    /* Break down ltr */
+    transition-duration: 0.4s;
+}
+
+.skip:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #F02929;
+    color: white;
+}
+
+.rpsBody {
+    height: 100%;
+    width: 100%;
+    background-image: url(wastelands.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: none;
+    position: absolute;
+    top: 0;
+}
+
+.kaioken {
+    display: block;
+    position: absolute;
+    background-image: url(kaioken\ rps.jpeg);
+    height: 55vh;
+    top: 20vh;
+    width: 100%;
+    background-size: 115%;
+    transform: skewY(5deg);
+    background-repeat: no-repeat;
+    background-position: -170px -150px;
+    border: 2px solid black;
+    left: 100vw;
+    transition-duration: 0.1s;
+}
+
+
+.rpsTitle {
+    height: 10vh;
+    font-size: 35px;
+    text-align: center;
+    font-family: 'DBZFont', sans-serif;
+    margin: 30px auto;
+}
+
+.rpsTitle>h1 {
+    color: yellow;
+    -webkit-text-stroke: 0.5px black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.icons {
+    height: 27vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+
+}
+
+.icons div img {
+    height: 50px;
+}
+
+.icons div {
+    background-color: #00D0FF;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid darkblue;
+}
+
+.beam {
+    height: 12vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    transition-duration: 0.4s;
+
+}
+
+.kamehameha {
+    position: relative;
+    height: 10vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    transition-duration: 0.4s;
+}
+
+.galickGun {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 10vh;
+    width: 50%;
+    transition-duration: 0.4s;
+}
+
+
+
+
+.blueSplash {
+    height: 20vh;
+    width: auto;
+    filter: blur(0.5px);
+    position: absolute;
+    animation: middleBeam 0.25s linear infinite alternate-reverse;
+    animation: sideBeam 0.5s linear infinite alternate-reverse;
+}
+
+.blueSplash.one {
+    height: 23vh;
+    animation: sideBeam 0.4s linear infinite alternate-reverse;
+    right: 1.4rem;
+}
+
+.purpleSplash {
+    height: 20vh;
+    left: 0.15rem;
+    width: auto;
+    z-index: 5;
+    z-index: 0;
+    filter: blur(0.5px);
+    position: absolute;
+    animation: sideBeam 0.5s linear infinite alternate-reverse;
+}
+
+.purpleSplash.two {
+    height: 27vh;
+    left: 1.4rem;
+    animation: sideBeam 0.4s linear infinite alternate-reverse;
+}
+
+.reaction {
+    margin: 50px 0px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+}
+
+.gokuReaction {
+    height: 200px;
+    width: 200px;
+    background-image: url(gokugif.gif);
+    background-size: cover;
+    background-position: 35%;
+    border-radius: 50%
+}
+
+.vegetaReaction {
+    height: 200px;
+    width: 200px;
+    background-image: url(vegetagif.gif);
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50%
+}
+
+.gokuReaction div,
+.vegetaReaction div {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.264);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "hurme-geometric";
+    font-weight: bold;
+    transition-duration: 0.4s;
+}
+
+.gokuReaction div:hover,
+.vegetaReaction div:hover {
+    opacity: 0;
+}
+
+.gokuReaction p,
+.vegetaReaction p {
+    margin: 0px;
+}
+
+.vegetaIcon div {
+    background-color: rgb(235, 124, 235);
+    border: 2px solid rgb(244, 30, 255);
+}
+
+.whiteOverlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 3;
+    display: none;
+    pointer-events: none;
+    transition-duration: 1s;
+    opacity: 1;
+}
+
+
+
+.kamehameha .beam {
+    height: 1vh;
+    width: 100%;
+    background-color: #EAEDF2;
+    box-shadow:
+        -10px 0 5px 10px #EAEDF2,
+        -20px 0 10px 20px #83FFFF,
+        -30px 0 6px 30px #40E1FE,
+        -40px 0 2px 40px #1CA7D9;
+    overflow: visible;
+    z-index: 0
+}
+
+.kamehameha .lines {
+    position: absolute;
+    background-image: url(kamehameha\ lines\ \(1\).png);
+    background-size: 120px;
+    height: 100%;
+    width: 100%;
+    animation: kameFlow 0.3s linear infinite;
+    top: 8px;
+}
+
+.galickGun .beam {
+    height: 1vh;
+    width: 100%;
+    background-color: #ffebfb;
+    box-shadow:
+        10px 0 5px 10px #ffebfb,
+        20px 0 10px 20px #E4A0FF,
+        30px 0 6px 30px #d68afc,
+        40px 0 2px 40px #c459ee;
+    overflow: visible;
+    z-index: 0;
+}
+
+.galickGun .lines {
+    position: absolute;
+    background-image: url(galick_gun_lines.png);
+    background-size: 120px;
+    height: 100%;
+    width: 100%;
+    animation: galickFlow 0.3s linear infinite;
+    bottom: 5px;
+}
+
+.iconButton div {
+    transition-duration: 0.4s;
+}
+
+.iconButton div:hover {
+    background-color: rgb(40, 119, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+
+
+}
+
+
+@keyframes kameFlow {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 200px 0px;
+    }
+}
+
+@keyframes galickFlow {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -200px 0px;
+    }
+}
+
+@keyframes middleBeam {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(1.2);
+    }
+}
+
+@keyframes sideBeam {
+    from {
+        transform: scale(1);
+        opacity: 0.7
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.rpsBody h2 {
+    background-color: rgb(40, 119, 255);
+    text-align: center;
+    font-family: "hurme-geometric";
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+.replay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.replay video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.replay div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.418);
+    border: 5px solid #F02929;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.668);
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    pointer-events: none;
+    opacity: 0;
+
+}
+
+.replay div h2 {
+    color: white;
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 35px;
+    -webkit-text-stroke: 1px black;
+}
+
+.replay div p {
+    font-family: "hurme-geometric";
+    color: white;
+}
+
+.replay div button {
+    font-size: 16px;
+    background-color: black;
+    height: 40px;
+    padding: 0px 15px;
+    font-family: hurme-geometric;
+    font-weight: bold;
+    color: white;
+    border: 2px solid #F02929;
+    transition-duration: 0.2s;
+}
+
+.replay div button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #F02929;
+    color: white;
+}
