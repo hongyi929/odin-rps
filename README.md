@@ -3,6 +3,10 @@ Goku and Vegeta spar to determine who's the best saiyan warrior between the both
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a053419b-7b83-48a1-be09-9bbc24ee723f" />
 
+## Highlights
+- Interactive rock paper scissors game with beam clash
+- Event triggers when one wins and loses
+
 ## Rationale
 While working on The Odin Project to improve my HTML, CSS and JavaScript skills, I thought it would be fun to try making it DBZ themed, as it's an anime that has helped inspire me throughout difficult times.
 I also wanted to pay homage to one of the more exciting DBZ sagas.
